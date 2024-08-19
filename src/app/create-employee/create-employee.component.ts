@@ -10,25 +10,26 @@ import { Route, Router } from '@angular/router';
 })
 export class CreateEmployeeComponent {
 
-  employee:Employee = new Employee();
-  constructor(private employeeService:EmployeeService,private router:Router){}
+  employee: Employee = new Employee();
+  constructor(private employeeService: EmployeeService, private router: Router) { }
 
-  ngOnInit():void{
+  ngOnInit(): void {
 
   }
-saveEmployee(){
-  this.employeeService.createEmployee(this.employee).subscribe(data =>{
-    console.log(data);
-  },
-  error => console.log(error));
+  saveEmployee() {
+    this.employeeService.createEmployee(this.employee).subscribe(data => {
+      console.log(data);
+      this.getToEmployeeList();
+    },
+      error => console.log(error));
 
 
-  
-}
-getToEmployeeList(){
-  this.router.navigate([`/employees`])
-}
-  onSubmit(){
+
+  }
+  getToEmployeeList() {
+    this.router.navigate([`/employees`])
+  }
+  onSubmit() {
     console.log(this.employee);
     this.saveEmployee();
   }
