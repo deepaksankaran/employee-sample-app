@@ -10,7 +10,8 @@ import { Router } from '@angular/router';
   styleUrl: './update-employee.component.css'
 })
 export class UpdateEmployeeComponent {
-  id: number;
+
+    id: number;
   employee: Employee = new Employee();
   constructor(private employeeService: EmployeeService,
     private route: ActivatedRoute,
