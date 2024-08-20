@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class UpdateEmployeeComponent {
 
-    id: number;
+  id: number;
   employee: Employee = new Employee();
   constructor(private employeeService: EmployeeService,
     private route: ActivatedRoute,
@@ -25,14 +25,14 @@ export class UpdateEmployeeComponent {
     }, error => console.log(error));
   }
 
-  onSubmit(){
-    this.employeeService.updateEmployee(this.id, this.employee).subscribe( data =>{
+  onSubmit() {
+    this.employeeService.updateEmployee(this.id, this.employee).subscribe(data => {
       this.goToEmployeeList();
     }
-    , error => console.log(error));
+      , error => console.log(error));
   }
 
-  goToEmployeeList(){
+  goToEmployeeList() {
     this.router.navigate(['/employees']);
   }
 }
